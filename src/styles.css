@@ -257,4 +257,35 @@
   .board-3d-inner svg { transform: translateZ(0); }
 }
 
+/* About page — hero & CTA backgrounds */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.about-hero-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.58 0.16 35 / 0.14), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, oklch(0.58 0.16 35 / 0.08), transparent),
+    radial-gradient(ellipse 50% 40% at 0% 80%, oklch(0.58 0.16 35 / 0.06), transparent);
+}
+
+.about-hero-grid {
+  background-image:
+    linear-gradient(oklch(0.58 0.16 35 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.58 0.16 35 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+}
+
+.about-piece-float {
+  animation: float-subtle 7s ease-in-out infinite;
+}
+
+.about-cta .about-hero-bg {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, oklch(0.58 0.16 35 / 0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 0% 0%, oklch(0.58 0.16 35 / 0.08), transparent);
+}
+
 

@@ -1,3 +1,4 @@
+import PageShell from "@/components/layout/PageShell";
 import ChessGame from "@/components/ChessGame";
 
 const FACTS: { title: string; body: string }[] = [
@@ -37,39 +38,37 @@ const FACTS: { title: string; body: string }[] = [
 
 export default function IndexPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <ChessGame />
+    <PageShell>
+      <ChessGame />
 
-        <section className="mt-16">
-          <h2 className="font-display text-2xl tracking-tight text-foreground">
-            A short history of the game
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Eight things worth knowing while you wait for the engine to think.
-          </p>
+      <section className="mt-16">
+        <h2 className="font-display text-2xl tracking-tight text-foreground">
+          A short history of the game
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Eight things worth knowing while you wait for the engine to think.
+        </p>
 
-          <ol className="mt-6 grid gap-4 sm:grid-cols-2">
-            {FACTS.map((f, i) => (
-              <li
-                key={f.title}
-                className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-elegant animate-fade-in"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <div className="flex items-start gap-3">
-                  <span className="font-mono text-xs text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-base text-foreground">{f.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
-                  </div>
+        <ol className="mt-6 grid gap-4 sm:grid-cols-2">
+          {FACTS.map((f, i) => (
+            <li
+              key={f.title}
+              className="group rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:shadow-elegant animate-fade-in"
+              style={{ animationDelay: `${i * 60}ms` }}
+            >
+              <div className="flex items-start gap-3">
+                <span className="font-mono text-xs text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-display text-base text-foreground">{f.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
                 </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-      </main>
-    </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </PageShell>
   );
 }
