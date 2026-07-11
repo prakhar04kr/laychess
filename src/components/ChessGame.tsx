@@ -133,7 +133,7 @@ export function ChessGame() {
     setLegalTargets([]);
   }, []);
 
-  const aiMove = useCallback(() => {
+  const engineMove = useCallback(() => {
     const g = gameRef.current;
     if (g.isGameOver()) return;
     setThinking(true);
@@ -170,13 +170,13 @@ export function ChessGame() {
         else if (m.captured) msg = pick(CAPTURE_COMPLIMENTS);
         else msg = pick(COMPLIMENTS);
         toast(msg, { duration: 1600 });
-        if (!twoPlayer) setTimeout(aiMove, 80);
+        if (!twoPlayer) setTimeout(engineMove, 80);
         return true;
       } catch {
         return false;
       }
     },
-    [aiMove, status, thinking, twoPlayer, updateStatus, clearSelection],
+    [engineMove, status, thinking, twoPlayer, updateStatus, clearSelection],
   );
 
   const onPieceDrop = useCallback(

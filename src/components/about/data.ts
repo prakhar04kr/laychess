@@ -216,7 +216,7 @@ export const HERO_PIECES = ["♔", "♕", "♖", "♗", "♘", "♙"] as const;
 export const INTRO =
   `${SITE.name} is a modern browser-based chess platform powered by a custom chess engine. ` +
   "It combines intuitive gameplay with advanced search algorithms, allowing users to experience " +
-  "intelligent chess directly in the browser — no install, no server, no compromise.";
+  "competitive chess directly in the browser — no install, no server, no compromise.";
 
 export const WHY_BUILT =
   "Chess engines traditionally live on servers or as desktop binaries. LayChess was built to prove " +
